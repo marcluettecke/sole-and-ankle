@@ -7,7 +7,7 @@ import Breadcrumbs from '../Breadcrumbs';
 import Select from '../Select';
 import Spacer from '../Spacer';
 import ShoeSidebar from '../ShoeSidebar';
-import ShoeGrid from '../ShoeGrid';
+import ShoeGrid from "../ShoeGrid";
 
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
@@ -42,17 +42,33 @@ const ShoeIndex = ({ sortId, setSortId }) => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 32px;
+  align-items: baseline;
+`;
 
-const LeftColumn = styled.div``;
+const LeftColumn = styled.div`
+  flex-basis: 248px;
+  padding-top: 32px`;
 
-const MainColumn = styled.div``;
+const MainColumn = styled.div`
+  flex: 1;
+`;
 
-const Header = styled.header``;
+const Header = styled.header`
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: ${WEIGHTS.medium};
+  
+  //my solution exercise 3
+  margin-right: auto;
 `;
 
 export default ShoeIndex;

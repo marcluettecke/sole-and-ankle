@@ -12,26 +12,42 @@ const Header = () => {
     <header>
       <SuperHeader />
       <MainHeader>
-        <Logo />
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
+        <Side >
+          <Logo />
+        </Side>
+          <Nav>
+            <NavLink href="/sale">Sale</NavLink>
+            <NavLink href="/new">New&nbsp;Releases</NavLink>
+            <NavLink href="/men">Men</NavLink>
+            <NavLink href="/women">Women</NavLink>
+            <NavLink href="/kids">Kids</NavLink>
+            <NavLink href="/collections">Collections</NavLink>
+          </Nav>
+        <Side />
       </MainHeader>
     </header>
   );
 };
 
 const MainHeader = styled.div`
-  padding: 0 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  // my solution exercise 2
+  padding: 18px 32px;
+  height: 72px;
+  display: flex;
+  align-items: baseline;
 `;
 
-const Nav = styled.nav``;
+const Nav = styled.nav`
+  display: flex;
+  gap: 48px;
+  margin: 0 48px;
+`;
+
+const Side = styled.div`
+  // works because it sets the hypothetical size of Logo to 0;
+  flex: 1;
+`
 
 const NavLink = styled.a`
   font-size: 1.125rem;
@@ -39,6 +55,7 @@ const NavLink = styled.a`
   text-decoration: none;
   color: ${COLORS.gray[900]};
   font-weight: ${WEIGHTS.medium};
+  line-height: 1;
 
   &:first-of-type {
     color: ${COLORS.secondary};

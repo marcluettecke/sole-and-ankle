@@ -26,17 +26,26 @@ const Wrapper = styled.div`
   font-size: 0.875rem;
   color: ${COLORS.gray[300]};
   background-color: ${COLORS.gray[900]};
+  // my solution exercise 1
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  height: 40px;
 `;
 
 const MarketingMessage = styled.span`
   color: ${COLORS.white};
+  margin-right: auto;
 `;
 
 const HelpLink = styled.a`
   color: inherit;
   text-decoration: none;
   outline-offset: 2px;
-
+  text-align: center;
+  
   &:not(:focus-visible) {
     outline: none;
   }
